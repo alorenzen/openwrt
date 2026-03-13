@@ -258,6 +258,25 @@ define Device/asus_rt-ac58u
 endef
 TARGET_DEVICES += asus_rt-ac58u
 
+define Device/asus_rt-ac95u
+	$(call Device/FitImageLzma)
+	DEVICE_VENDOR := ASUS
+	DEVICE_MODEL := RT-AC95U
+	DEVICE_ALT0_VENDOR := ASUS
+	DEVICE_ALT0_MODEL := AC3000
+	SOC := qcom-ipq4019
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	IMAGE_SIZE := 20439364
+	FILESYSTEMS := squashfs
+	UIMAGE_NAME:=$(shell echo -e '\03\01\01\01RT-AC95U')
+	UIMAGE_MAGIC := 0x27051956
+	IMAGES += factory.trx
+	IMAGE/factory.trx := copy-file $(KDIR)/tmp/$$(KERNEL_INITRAMFS_IMAGE) | uImage none
+	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct kmod-ath10k-ct kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += asus_rt-ac95u
+
 define Device/avm_fritzbox-4040
 	$(call Device/FitImageLzma)
 	DEVICE_VENDOR := AVM

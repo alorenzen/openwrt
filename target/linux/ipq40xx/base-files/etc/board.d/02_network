@@ -70,6 +70,7 @@ ipq40xx_setup_interfaces()
 		ucidef_set_interface_lan "lan"
 		;;
 	aruba,ap-303h|\
+	asus,rt-ac95u|\
 	buffalo,wtr-m2133hp|\
 	ezviz,cs-w3-wd1200g-eup|\
 	netgear,rbr40|\

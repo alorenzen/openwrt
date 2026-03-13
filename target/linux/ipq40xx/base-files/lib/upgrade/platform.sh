@@ -146,7 +146,8 @@ platform_do_upgrade() {
 	asus,map-ac1300|\
 	asus,map-ac2200|\
 	asus,rt-ac42u|\
-	asus,rt-ac58u)
+	asus,rt-ac58u|\
+	asus,rt-ac95u)
 		CI_KERNPART="linux"
 		nand_do_upgrade "$1"
 		;;
